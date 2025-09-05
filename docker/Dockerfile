@@ -45,7 +45,6 @@ RUN apt-get update \
       wget \
       git \
       tree \
-      software-properties-common \
       $(grep Ubuntu /etc/os-release > /dev/null && echo vim-common || echo xxd)
 
 # Bionic Beaver == Ubuntu 18.04
