@@ -35,9 +35,9 @@ debuild -us -uc -tc -b -a amd64 -d
 ```
 
 ### Bazel
-The version of `bazel` needs to be the same as that recommended for the corresponding version of tensorflow. For example, it requires `Bazel 6.5.0` to compile TF 2.17.1.
+The version of `bazel` needs to be the same as that recommended for the corresponding version of tensorflow. For example, it requires `Bazel 6.5.0` to compile TF 2.19.1.
 
-The current version of Tensorflow supported is `2.17.1`.
+The current version of Tensorflow supported is `2.19.1`.
 
 Build native binaries on Linux and macOS:
 ```
@@ -105,10 +105,10 @@ sudo make install
 ```
 
 
-Next, you'll need to clone the [Tensorflow Repo](https://github.com/tensorflow/tensorflow) at the desired checkout (using TF head isn't advised). If you are planning to use libcoral or pycoral libraries, this should match the ones in those repos' WORKSPACE files. For example, if you are using TF 2.17.1, we can check that [tag in the TF Repo](https://github.com/tensorflow/tensorflow/tree/r2.15) get the latest commit for that stable release and then checkout that address:
+Next, you'll need to clone the [Tensorflow Repo](https://github.com/tensorflow/tensorflow) at the desired checkout (using TF head isn't advised). If you are planning to use libcoral or pycoral libraries, this should match the ones in those repos' WORKSPACE files. For example, if you are using TF 2.19.1, we can check that [tag in the TF Repo](https://github.com/tensorflow/tensorflow/tree/r2.19) get the latest commit for that stable release and then checkout that address:
 ```
 git clone https://github.com/tensorflow/tensorflow
-git checkout v2.17.1
+git checkout v2.19.1
 ```
 
 To build the library for Debian/Ubuntu:
