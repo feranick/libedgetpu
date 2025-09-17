@@ -54,16 +54,16 @@ load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 #TENSORFLOW_SHA256 = "75b8dc9b33afff6f2e2d2e2dacc26dd0973bdcee94eec2af290828c1bc574bdc"
 
 # TF release 2.17.1 as of 10/24/2024.
-TENSORFLOW_COMMIT = "3c92ac03cab816044f7b18a86eb86aa01a294d95"
-TENSORFLOW_SHA256 = "317dd95c4830a408b14f3e802698eb68d70d81c7c7cfcd3d28b0ba023fe84a68"
+#TENSORFLOW_COMMIT = "3c92ac03cab816044f7b18a86eb86aa01a294d95"
+#TENSORFLOW_SHA256 = "317dd95c4830a408b14f3e802698eb68d70d81c7c7cfcd3d28b0ba023fe84a68"
 
 # TF release 2.18.0 as of 10/24/2024.
 #TENSORFLOW_COMMIT = "6550e4bd80223cdb8be6c3afd1f81e86a4d433c3"
 #TENSORFLOW_SHA256 = "403916fbcfcbd5657cd891a871debc72433d7a8c56760297a79085e1abc8f18a"
 
 # TF release 2.18.1 as of 03/07/2025.
-#TENSORFLOW_COMMIT = "cb64295ec7308f770b22db6047a1e755b35b7bee"
-#TENSORFLOW_SHA256 = "5fcca4ec0732e146547fc26f6966cf92236c2f85a9e086b85c83d303e2c38980"
+TENSORFLOW_COMMIT = "cb64295ec7308f770b22db6047a1e755b35b7bee"
+TENSORFLOW_SHA256 = "5fcca4ec0732e146547fc26f6966cf92236c2f85a9e086b85c83d303e2c38980"
 
 # TF release 2.19.0 as of 03/05/2025.
 #TENSORFLOW_COMMIT = "e36baa302922ea3c7131b302c2996bd2051ee5c4"
@@ -105,6 +105,8 @@ def libedgetpu_dependencies(
         ],
         sha256 = tensorflow_sha256,
         strip_prefix = "tensorflow-" + tensorflow_commit,
+        patches = ["//patches:add_configure_cuda.diff"],
+        patch_args = ["-p1"],
     )
 
     maybe(
